@@ -15,10 +15,6 @@ public class RedefineClassAgent {
     private static Instrumentation instrumentation;
 
     /**
-     * Método chamado quando o agente é anexado dinamicamente a uma JVM em execução. O parâmetro
-     * agentArgs (neste exemplo) deverá ser o caminho para o novo TesteFila.class.
-     */
-    /**
      * Método chamado quando o agente é anexado dinamicamente a uma JVM em execução.
      *
      * @param agentArgs parâmetros do agente
@@ -129,7 +125,7 @@ public class RedefineClassAgent {
         System.out.println(
             "Uso: java -cp \"target/RedefineClassAgent.jar:$JDK_HOME/lib/tools.jar\" io.github.mhagnumdw.RedefineClassAgent $JVM_PID $CLASS_FILE_PATH,$CLASS_FQDN");
         System.out.println(
-            " Ex: java -cp \"target/RedefineClassAgent.jar:$JDK_HOME/lib/tools.jar\" io.github.mhagnumdw.RedefineClassAgent 123 /tmp/TesteFila.class,br.com.mypackage.TesteMDB");
+            " Ex: java -cp \"target/RedefineClassAgent.jar:$JDK_HOME/lib/tools.jar\" io.github.mhagnumdw.RedefineClassAgent 123 /tmp/TesteMDB.class,br.com.mypackage.TesteMDB");
     }
 
     private static void logI(String msg) {

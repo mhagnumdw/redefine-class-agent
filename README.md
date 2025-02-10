@@ -57,5 +57,5 @@ java \
 > ```bash
 > export JDK_HOME="/home/mhagnumdw/.asdf/installs/java/adoptopenjdk-8.0.362+9"
 > export JVM_PID=$(jps | grep -P '^\d+ Main$' | awk '{print $1}')
-> java -cp "target/RedefineClassAgent.jar:$JDK_HOME/lib/tools.jar" io.github.mhagnumdw.RedefineClassAgent $JVM_PID /tmp/TesteFila.class,br.com.mypackage.TesteMDB
+> java -cp "target/RedefineClassAgent.jar:$JDK_HOME/lib/tools.jar" io.github.mhagnumdw.RedefineClassAgent $JVM_PID /tmp/TesteMDB.class,br.com.mypackage.TesteMDB
 > ```
