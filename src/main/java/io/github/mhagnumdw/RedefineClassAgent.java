@@ -125,13 +125,11 @@ public class RedefineClassAgent {
     }
 
     private static void usage(String msg) {
-        // System.out.println("Uso: java -jar RedefineClassAgent.jar <PID>
-        // <caminho-para-novo-TesteFila.class>");
         System.out.println(msg);
         System.out.println(
-            "Uso: java -cp \"target/RedefineClassAgent.jar:$JDK8_HOME/lib/tools.jar\" io.github.mhagnumdw.RedefineClassAgent $JVM_PID $CLASS_PATH,$CLASS_FQDN");
+            "Uso: java -cp \"target/RedefineClassAgent.jar:$JDK_HOME/lib/tools.jar\" io.github.mhagnumdw.RedefineClassAgent $JVM_PID $CLASS_FILE_PATH,$CLASS_FQDN");
         System.out.println(
-            " Ex: java -cp \"target/RedefineClassAgent.jar:$JDK8_HOME/lib/tools.jar\" io.github.mhagnumdw.RedefineClassAgent 123 /tmp/TesteFila.class,br.com.mypackage.TesteMDB");
+            " Ex: java -cp \"target/RedefineClassAgent.jar:$JDK_HOME/lib/tools.jar\" io.github.mhagnumdw.RedefineClassAgent 123 /tmp/TesteFila.class,br.com.mypackage.TesteMDB");
     }
 
     private static void logI(String msg) {
