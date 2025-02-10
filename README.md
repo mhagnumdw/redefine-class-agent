@@ -59,3 +59,7 @@ java \
 > export JVM_PID=$(jps | grep -P '^\d+ Main$' | awk '{print $1}')
 > java -cp "target/RedefineClassAgent.jar:$JDK_HOME/lib/tools.jar" io.github.mhagnumdw.RedefineClassAgent $JVM_PID /tmp/TesteMDB.class,br.com.mypackage.TesteMDB
 > ```
+
+Observe os logs tanto da execução do comando, como os logs da aplicação que está em execução na JVM.
+
+Se tudo ok, a partir desse momento a classe alterada já estará em execuão com a modificação.
