@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.github.mhagnumdw</groupId>
+    <artifactId>redefine-class-agent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
+  
+    <dependencies>
+        <dependency>
+            <groupId>com.sun</groupId>
+            <artifactId>tools</artifactId>
+            <version>1.8</version>
+            <scope>system</scope>
+            <!-- Eclipse e Vscode quebram com esse path mesmo ele sendo resolvido corretamente. -->
+            <!-- Para não quebrar você pode colocar manualmente o path completo. -->
+            <!-- Via linha de comando isso não é problema para o mvn. -->
+            <systemPath>${java.home}/../lib/tools.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>RedefineClassAgent</finalName>
+      
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>io.github.mhagnumdw.RedefineClassAgent</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <Agent-Class>io.github.mhagnumdw.RedefineClassAgent</Agent-Class>
+                            <Can-Redefine-Classes>true</Can-Redefine-Classes>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
